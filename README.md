@@ -17,25 +17,21 @@ Build a small part of a card memory game based on your assigned role. This is me
 ### 🚀 **Setup Guide:**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/labsorg525/hiring_test.git
+   git clone git@github.com:esRueda/CodeBeloChallenge.git
    ```
-2. Navigate to the project directory:
-   ```bash
-   cd hiring_test
-   ```
-3. Set up the backend:
+2. Set up the backend:
    ```bash
    cd ./backend
    npm install
    npm start
    ```
-4. Set up the frontend:
+3. Set up the frontend:
    ```bash
    cd ../frontend
    npm install
    npm start
    ```
-5. Visit `http://localhost:5173` to see the project.
+4. Visit `http://localhost:5173` to see the project.
 
 ---
 
