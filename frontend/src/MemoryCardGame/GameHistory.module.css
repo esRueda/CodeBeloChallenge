@@ -1,0 +1,233 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2d1b4e 0%, #1a0f2e 100%);
+  font-family: "Orbitron", sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.historyCard {
+  background: rgba(30, 25, 45, 0.85);
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.title {
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: clamp(24px, 5vw, 32px);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.loading,
+.error,
+.noHistory {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  background: rgba(70, 60, 110, 0.4);
+  color: #fff;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Orbitron", sans-serif;
+}
+
+.filterButton:hover {
+  background: rgba(90, 80, 130, 0.6);
+  transform: translateY(-2px);
+}
+
+.filterButton.active {
+  background: rgba(255, 215, 0, 0.25);
+  color: #ffd700;
+  border-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.historyList {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #ffd700 rgba(30, 25, 45, 0.5);
+}
+
+.historyList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.historyList::-webkit-scrollbar-track {
+  background: rgba(30, 25, 45, 0.5);
+  border-radius: 10px;
+}
+
+.historyList::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 215, 0, 0.5);
+  border-radius: 10px;
+}
+
+.historyItem {
+  background: rgba(40, 35, 60, 0.6);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 3px solid #ffd700;
+  transition: all 0.3s ease;
+}
+
+.historyItem:hover {
+  transform: translateX(2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gameHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.date {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status.completed {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.status.failed {
+  background-color: rgba(255, 107, 107, 0.2);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.gameDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.detailItem {
+  flex: 1;
+  min-width: 120px;
+}
+
+.label {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.value {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.backButton {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+  color: #1a0f2e;
+  font-size: clamp(14px, 4vw, 16px);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.backButton:hover {
+  background: linear-gradient(135deg, #ffdf33 0%, #ffc433 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.backButton:active {
+  transform: translateY(1px);
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .historyCard {
+    padding: 20px 15px;
+  }
+
+  .gameHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .status {
+    align-self: flex-start;
+  }
+
+  .gameDetails {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .detailItem {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .filterContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterButton {
+    width: 100%;
+  }
+}
